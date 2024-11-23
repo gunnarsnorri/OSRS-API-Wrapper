@@ -9,6 +9,8 @@ class AccountType(Enum):
     ULTIMATE_IRONMAN = "/m=hiscore_oldschool_ultimate/index_lite.ws"
     DEADMAN = "/m=hiscore_oldschool_deadman/index_lite.ws"
     SEASONAL = "/m=hiscore_oldschool_seasonal/index_lite.ws"
+    TOURNAMENT = "/m=hiscore_oldschool_tournament/index_lite.ws"
+    FRESH_START = "/m=hiscore_oldschool_fresh_start/index_lite.ws"
 
     @classmethod
     def normal_types(cls):
@@ -80,11 +82,14 @@ MINIGAMES = [
     "PvP Arena - Rank",
     "Soul Wars Zeal",
     "Rifts closed",
+    "Colosseum Glory",
 ]
 
 BOSSES = [
     "Abyssal Sire",
     "Alchemical Hydra",
+    "Amoxliatl",
+    "Araxxor",
     "Artio",
     "Barrows Chests",
     "Bryophyta",
@@ -120,11 +125,14 @@ BOSSES = [
     "Phantom Muspah",
     "Sarachnis",
     "Scorpia",
+    "Scurrius",
     "Skotizo",
+    "Sol Heredit",
     "Spindel",
     "Tempoross",
     "The Gauntlet",
     "The Corrupted Gauntlet",
+    "The Hueycoatl",
     "The Leviathan",
     "The Whisperer",
     "Theatre of Blood",
