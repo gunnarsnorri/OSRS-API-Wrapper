@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="python_osrsapi",
-    version="0.0.7",
+    version="0.0.8",
     author="Chasesc",
     description="Oldschool Runescape API wrapper",
     long_description=long_description,

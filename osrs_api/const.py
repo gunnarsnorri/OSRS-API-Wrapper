@@ -117,6 +117,7 @@ BOSSES = [
     "Kraken",
     "Kree'Arra",
     "K'ril Tsutsaroth",
+    "Lunar Chests",
     "Mimic",
     "Nex",
     "Nightmare",
