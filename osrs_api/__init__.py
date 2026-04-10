@@ -1,5 +1,5 @@
 from .grandexchange import GrandExchange
-from .hiscores import Hiscores, Minigame, Boss
+from .hiscores import Activity, Hiscores, Minigame, Boss
 
 from .item import Item
 from .priceinfo import PriceInfo

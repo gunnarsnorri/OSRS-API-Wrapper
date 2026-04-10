@@ -62,9 +62,11 @@ SKILLS = [
     "runecrafting",
     "hunter",
     "construction",
+    "sailing",
 ]
 
 MINIGAMES = [
+    "Grid Points",
     "League Points",
     "Deadman Points",
     "Bounty Hunter - Hunter",
@@ -83,6 +85,7 @@ MINIGAMES = [
     "Soul Wars Zeal",
     "Rifts closed",
     "Colosseum Glory",
+    "Collections Logged",
 ]
 
 BOSSES = [
@@ -92,9 +95,10 @@ BOSSES = [
     "Araxxor",
     "Artio",
     "Barrows Chests",
+    "Brutus",
     "Bryophyta",
     "Callisto",
-    "Cal'varion",
+    "Calvar'ion",
     "Cerberus",
     "Chambers of Xeric",
     "Chambers of Xeric: Challenge Mode",
@@ -107,6 +111,7 @@ BOSSES = [
     "Dagannoth Rex",
     "Dagannoth Supreme",
     "Deranged Archaeologist",
+    "Doom of Mokhaiotl",
     "Duke Sucellus",
     "General Graardor",
     "Giant Mole",
@@ -127,6 +132,7 @@ BOSSES = [
     "Sarachnis",
     "Scorpia",
     "Scurrius",
+    "Shellbane Gryphon",
     "Skotizo",
     "Sol Heredit",
     "Spindel",
@@ -135,6 +141,7 @@ BOSSES = [
     "The Corrupted Gauntlet",
     "The Hueycoatl",
     "The Leviathan",
+    "The Royal Titans",
     "The Whisperer",
     "Theatre of Blood",
     "Theatre of Blood: Hard Mode",
@@ -148,6 +155,7 @@ BOSSES = [
     "Vet'ion",
     "Vorkath",
     "Wintertodt",
+    "Yama",
     "Zalcano",
     "Zulrah",
 ]
@@ -156,7 +164,7 @@ SKILLS_AMT = len(SKILLS)
 MINIGAMES_AMT = len(MINIGAMES)
 BOSSES_AMT = len(BOSSES)
 
-BASE_URL = "http://services.runescape.com"
+BASE_URL = "https://secure.runescape.com"
 
 BASE_URL_GE = BASE_URL + "/m=itemdb_oldschool/"
 GE_BY_ID = BASE_URL_GE + "api/catalogue/detail.json?item="
@@ -164,4 +172,4 @@ GE_BY_ID = BASE_URL_GE + "api/catalogue/detail.json?item="
 GE_ICON = BASE_URL_GE + "obj_sprite.gif?id="
 GE_LARGE_ICON = BASE_URL_GE + "obj_big.gif?id="
 
-OSBUDDY_PRICE_URI = "http://api.rsbuddy.com/grandExchange?a=guidePrice&i="
+OSBUDDY_PRICE_URI = "https://api.rsbuddy.com/grandExchange?a=guidePrice&i="

@@ -1,4 +1,3 @@
-import re
 import urllib.request
 
 from collections import namedtuple
@@ -7,7 +6,8 @@ from urllib.parse import quote
 from . import const
 from .skill import Skill
 
-Minigame = namedtuple("Minigame", ["name", "rank", "score"])
+Activity = namedtuple("Activity", ["name", "rank", "score"])
+Minigame = Activity
 Boss = namedtuple("Boss", ["name", "rank", "kills"])
 
 
@@ -23,6 +23,7 @@ class Hiscores(object):
         self.rank, self.total_level, self.total_xp = -1, -1, -1
 
         self.skills = {}
+        self.activities = {}
         self.minigames = {}
         self.bosses = {}
 
@@ -69,7 +70,7 @@ class Hiscores(object):
         data = url.read()
         url.close()
 
-        return data.decode().split("\n")
+        return data.decode().splitlines()
 
     def _set_data(self):
         """
@@ -77,7 +78,7 @@ class Hiscores(object):
 
         "overall_rank, total_level, total_xp"
         "skill_rank, skill_level, skill_xp" for all skills
-        "minigame_rank, minigame_score" for all minigames
+        "activity_rank, activity_score" for all non-boss activities
         "boss_rank, boss_kills" for all bosses
 
         If a player is unranked for any of these categories, there is a value of -1 in that row.
@@ -97,10 +98,6 @@ class Hiscores(object):
             chunk = {}
 
             for i, name in enumerate(names, start=start_index):
-                if (self._type is not const.AccountType.SEASONAL and name ==
-                        "League Points"):
-                    continue
-
                 # The API only returns integers
                 row_data = [int(col)
                             for col in self._api_response[i].split(",")]
@@ -117,9 +114,11 @@ class Hiscores(object):
         )
 
         self.skills = _get_api_chunk(Skill, names=const.SKILLS, start_index=1)
-        self.minigames = _get_api_chunk(
-            Minigame, names=const.MINIGAMES, start_index=1 + const.SKILLS_AMT
+        self.activities = _get_api_chunk(
+            Activity, names=const.MINIGAMES, start_index=1 + const.SKILLS_AMT
         )
+        # Keep the legacy name for backwards compatibility.
+        self.minigames = self.activities
         self.bosses = _get_api_chunk(
             Boss,
             names=const.BOSSES,
