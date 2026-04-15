@@ -41,6 +41,18 @@ True
 1052
 ```
 
+### Icon URLs
+
+```python
+>>> from osrs_api import get_icon_url
+>>> get_icon_url('attack')
+'https://www.runescape.com/img/rsp777/hiscores/skill_icon_attack1.gif'
+>>> get_icon_url('Bounty Hunter - Hunter')
+'https://www.runescape.com/img/rsp777/game_icon_bountyhunterhunter.png'
+>>> get_icon_url('barrows')
+'https://www.runescape.com/img/rsp777/game_icon_barrowschests.png'
+```
+
 ### Grand Exchange
 
 ```python
